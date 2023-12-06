@@ -44,14 +44,14 @@ class UsersHandler {
     
     async getUserByIdHandler(request, h) {
         try {
-        const { id } = request.params;
-        const user = await this._service.getUserById(id);
-        return {
-            status : 'success',
-            data : {
-                user
-            }
-        };
+            const { id } = request.params;
+            const user = await this._service.getUserById(id);
+            return {
+                status : 'success',
+                data : {
+                    user
+                }
+            };
         } catch (error) {
             if (error instanceof ClientError) {
                 const response = h.response({
